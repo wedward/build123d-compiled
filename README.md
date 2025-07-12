@@ -19,9 +19,8 @@
 [![DOI](https://zenodo.org/badge/510925389.svg)](https://doi.org/10.5281/zenodo.14872322)
 
 
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
-This is a demonstration of a Build123d Repl in a single, self-contained .exe
+--------------------
+Demonstration of a complete build123d REPL in a single, self-contained Windows binary: [repl.exe](https://github.com/wedward/build123d-compiled/releases/download/test/repl.exe)
 <br><br>
 Build steps:
 
@@ -31,19 +30,23 @@ python -m venv venv
 python -m pip install --upgrade pip
 python -m pip install -e .
 python -m pip install nuitka
-
-python -m nuitka .\nuitka\repl.py --msvc=latest --standalone --onefile --jobs=auto 
-
+python -m nuitka .\nuitka\repl.py --msvc=latest --standalone --onefile --jobs=4
+.\repl.exe
 ```
 
 For a full python interactive shell:
-```py
+```
+WELCOME TO THE BUILD123D REPL
+
 > from code import interact
 > interact(local=env)
+Python 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> 
 ```
 
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+--------------------
 
 Build123d is a python-based, parametric, [boundary representation (BREP)][BREP] modeling framework for 2D and 3D CAD. It's built on the [Open Cascade] geometric kernel and allows for the creation of complex models using a simple and intuitive python syntax. Build123d can be used to create models for 3D printing, CNC machining, laser cutting, and other manufacturing processes.  Models can be exported to a wide variety of popular CAD tools such as [FreeCAD] and SolidWorks.
 
