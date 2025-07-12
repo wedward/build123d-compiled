@@ -19,6 +19,32 @@
 [![DOI](https://zenodo.org/badge/510925389.svg)](https://doi.org/10.5281/zenodo.14872322)
 
 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+This is a demonstration of a Build123d Repl in a single, self-contained .exe
+<br><br>
+Build steps:
+
+```
+python -m venv venv
+.\venv\Scripts\activate
+python -m pip install --upgrade pip
+python -m pip install -e .
+python -m pip install nuitka
+
+python -m nuitka .\nuitka\repl.py --msvc=latest --standalone --onefile --jobs=auto 
+
+```
+
+For a full python interactive shell:
+```py
+> from code import interact
+> interact(local=env)
+```
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+
 Build123d is a python-based, parametric, [boundary representation (BREP)][BREP] modeling framework for 2D and 3D CAD. It's built on the [Open Cascade] geometric kernel and allows for the creation of complex models using a simple and intuitive python syntax. Build123d can be used to create models for 3D printing, CNC machining, laser cutting, and other manufacturing processes.  Models can be exported to a wide variety of popular CAD tools such as [FreeCAD] and SolidWorks.
 
 Build123d could be considered as an evolution of [CadQuery] where the somewhat restrictive Fluent API (method chaining) is replaced with stateful context managers - e.g. `with` blocks - thus enabling the full python toolbox: for loops, references to objects, object sorting and filtering, etc.
