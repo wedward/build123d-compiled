@@ -28,8 +28,7 @@ Build steps:
 python -m venv venv
 .\venv\Scripts\activate
 python -m pip install --upgrade pip
-python -m pip install -e .
-python -m pip install nuitka
+python -m pip install nuitka build123d
 python -m nuitka .\nuitka\repl.py --msvc=latest --standalone --onefile --jobs=4
 .\repl.exe
 ```
