@@ -1,0 +1,1 @@
+python -m nuitka repl.py --msvc=latest --standalone --jobs=auto --onefile
